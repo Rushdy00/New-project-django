@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'update-profile' profile_id %}">
+        {% csrf_token %}
+        {{profile.as_p}}
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

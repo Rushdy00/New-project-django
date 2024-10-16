@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>User Profiles</h3>
+    {% for profile in profiles %}
+        <ul>
+            <li><b>id</b>: {{ profile.id}}</li>
+            <li><b>First Name</b>: {{ profile.user.first_name}}</li>
+            <li><b>last Name</b>: {{ profile.user.last_name}}</li>
+            <li><b>email</b>: {{ profile.user.email}}</li>
+        </ul>
+    {% endfor %}
+</body>
+</html>

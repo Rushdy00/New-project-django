@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'update-profile-no-form' profile.id %}">
+        {% csrf_token %}
+        <label for="first_name_id">First Name</label>
+        <input id="first_name_id" type="text" value="{{ profile.user.first_name }}" name="first_name">
+        <br>
+        <br>
+        <label for="last_name_id">Last Name</label>
+        <input id="last_name_id" type="text" value="{{ profile.user.last_name }}" name="last_name">
+        <br>
+        <br>
+        <label for="bio_id">Bio</label>
+        <input id="bio_id" type="text" value="{{ profile.bio }}" name="bio">
+        <br>
+        <br>
+        <label for="bio_id">Marital Status</label>
+        <select name="marital_status">
+            {% for value, label in profile.STATUS %}
+                {% if value == profile.marital_status %}
+                    <option value="{{ value }}" selected>{{ label }}</option>
+                {% else %}
+                    <option value="{{ value }}">{{ label }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="is_emp_id">Is Employed</label>
+        <input id="is_emp_id" type="checkbox" {% if profile.is_employed %} checked {% endif %} name="is_employed">
+        <br>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

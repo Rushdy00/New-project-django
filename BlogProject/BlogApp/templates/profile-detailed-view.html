@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile details</title>
+</head>
+<body>
+    <ul><b>First Name</b>: {{profile.user.first_name}}</ul>
+    <ul><b>Last Name</b>: {{profile.user.last_name}}</ul>
+    <ul><b>Email</b>: {{profile.user.email}}</ul>
+    <ul><b>Bio</b>: {{profile.Bio}}</ul>
+    <ul><b>Marital Status</b>: {{profile.marital_status}}</ul>
+    <ul><b>Is Employed</b>: {{profile.is_employed}}</ul>
+    <img src="{{ profile.profile_picture.url }}">
+
+
+</body>
+</html>
