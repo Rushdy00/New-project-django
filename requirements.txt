@@ -2,3 +2,6 @@ django
 pymysql
 python-dotenv
 Pillow
+djangorestframework
+markdown
+django-filter
